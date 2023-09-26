@@ -1,0 +1,31 @@
+
+Scenario: Create a new client                                       # src/test/resources/features/CreateClient.feature:3
+  Given I have a client with the following details:                 # com.testing.api.stepDefinitions.ClientSteps.iHaveAClientWithTheFollowingDetails(io.cucumber.datatable.DataTable)
+    | Name  | LastName | Country | City | Email           | Phone        |
+    | Alice | Johnson  | USA     | NYC  | alice@email.com | 123-456-7890 |
+  When I send a POST request to create a client                     # com.testing.api.stepDefinitions.ClientSteps.sendPOSTRequestToCreateClient()
+  Then the client response should have a status code of 201         # com.testing.api.stepDefinitions.ClientSteps.validateClientResponseStatusCode(int)
+  And the response should include the details of the created client # com.testing.api.stepDefinitions.ClientSteps.validateResponseIncludesCreatedClientDetails()
+  And validates the response with the client JSON schema            # com.testing.api.stepDefinitions.ClientSteps.validateResponseWithClientJSONSchema()
+
+Scenario: Retrieve the list of all clients                    # src/test/resources/features/GetClients.feature:6
+  Given there are registered clients in the system            # com.testing.api.stepDefinitions.ClientSteps.thereAreRegisteredClientsInTheSystem()
+  When I send a GET request to view all the clients           # com.testing.api.stepDefinitions.ClientSteps.sendGETRequestToViewAllClients()
+  Then the client response should have a status code of 200   # com.testing.api.stepDefinitions.ClientSteps.validateClientResponseStatusCode(int)
+  And validates the response with the client list JSON schema # com.testing.api.stepDefinitions.ClientSteps.validateResponseWithClientListJSONSchema()
+
+Scenario: Retrieve the list of all resources                    # src/test/resources/features/GetResources.feature:6
+  Given there are registered resources in the system            # com.testing.api.stepDefinitions.ResourceSteps.thereAreRegisteredResourcesInTheSystem()
+  When I send a GET request to view all the resources           # com.testing.api.stepDefinitions.ResourceSteps.sendGETRequestToViewAllResources()
+  Then the resource response should have a status code of 200   # com.testing.api.stepDefinitions.ResourceSteps.validateResourceResponseStatusCode(int)
+  And validates the response with the resource list JSON schema # com.testing.api.stepDefinitions.ResourceSteps.validateResponseWithResourceListJSONSchema()
+
+Scenario: Update the last resource                             # src/test/resources/features/UpdateResource.feature:3
+  Given there are registered resources in the system           # com.testing.api.stepDefinitions.ResourceSteps.thereAreRegisteredResourcesInTheSystem()
+  And I retrieve the details of the latest resource            # com.testing.api.stepDefinitions.ResourceSteps.retrieveLatestResourceDetails()
+  When I send a PUT request to update the latest resource      # com.testing.api.stepDefinitions.ResourceSteps.sendPUTRequestToUpdateLatestResource(java.lang.String)
+  Then the resource response should have a status code of 200  # com.testing.api.stepDefinitions.ResourceSteps.validateResourceResponseStatusCode(int)
+  And the resource response should have the following details: # com.testing.api.stepDefinitions.ResourceSteps.validateResourceResponseDetails(io.cucumber.datatable.DataTable)
+    | name      | trademark    | stock  | price    | description                                              | tags   | is_active |
+    | SrBuñuelo | TraslaviñaSA | 159589 | 17777.07 | Designed to keeping in mind durability as well as trends | status | false     |
+  And validates the response with the resource JSON schema     # com.testing.api.stepDefinitions.ResourceSteps.validateResponseWithResourceJSONSchema()

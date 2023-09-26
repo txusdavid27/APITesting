@@ -1,0 +1,40 @@
+{
+    "type": "object",
+    "properties": {
+      "name": {
+        "type": "string"
+      },
+      "trademark": {
+        "type": "string"
+      },
+      "stock": {
+        "type": "integer"
+      },
+      "price": {
+        "type": "number"
+      },
+      "description": {
+        "type": "string"
+      },
+      "tags": {
+        "type": "string"
+      },
+      "is_active": {
+        "type": "boolean"
+      },
+      "id": {
+        "type": "string"
+      }
+    },
+    "required": [
+      "name",
+      "trademark",
+      "stock",
+      "price",
+      "description",
+      "tags",
+      "is_active",
+      "id"
+    ]
+  }
+  

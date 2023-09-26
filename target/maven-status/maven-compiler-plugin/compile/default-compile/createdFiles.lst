@@ -1,0 +1,9 @@
+com\testing\api\models\Client$ClientBuilder.class
+com\testing\api\models\Resource$ResourceBuilder.class
+com\testing\api\requests\ResourceRequest.class
+com\testing\api\utils\JsonFileReader.class
+com\testing\api\requests\ClientRequest.class
+com\testing\api\requests\BaseRequest.class
+com\testing\api\models\Resource.class
+com\testing\api\models\Client.class
+com\testing\api\utils\Constants.class

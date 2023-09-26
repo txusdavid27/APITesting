@@ -1,0 +1,4 @@
+com\testing\api\stepDefinitions\Hooks.class
+com\testing\api\stepDefinitions\ClientSteps.class
+com\testing\api\runner\TestRunner.class
+com\testing\api\stepDefinitions\ResourceSteps.class
