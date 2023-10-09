@@ -1,4 +1,4 @@
-# RestAssured Practice- Traslaviña Jesús
+# RestAssured Practice- Traslaviña Jesús DAVID
 
 This project is a practical exercise involving the implementation of 4 test cases for an API within a development environment. It utilizes the following tools and technologies:
 
